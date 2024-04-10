@@ -310,7 +310,7 @@ public class ServisApp extends Application {
     }
 
     private void initDB() {
-        DB.dropTables();
+        // DB.dropTables();
         DB.initTables();
     }
 
@@ -322,7 +322,7 @@ public class ServisApp extends Application {
     private void refreshPlate() {
         plate = DB.readAllPlata();
         String targetMesec = makeTargetDate(new Date());
-        System.out.println("TM" + targetMesec);
+        // System.out.println("TM" + targetMesec);
         boolean isMesecPresent = false;
         for (Plata plata : plate) {
             if (plata.getMesec().equals(targetMesec)) {
@@ -357,7 +357,7 @@ public class ServisApp extends Application {
 
     private void displayReport(Report report) {
         currentReport = report;
-        System.out.println(report);
+        // System.out.println(report);
         modelLabel.setText("Model: " + report.getModel());
         vlasnikLabel.setText("Vlasnik: " + report.getVlasnik());
         registarskiBrojLabel.setText("Registarski broj: " + report.getRegistarskiBroj());
@@ -369,7 +369,7 @@ public class ServisApp extends Application {
         serviserLabel.setText("Serviser: " + report.getServiser());
         rukeLabel.setText("Ruke: " + report.getRuke());
         cenaDelovaLabel.setText("Cena delova: " + report.getCenaDelova());
-        System.out.println(report.getMaterijali());
+        // System.out.println(report.getMaterijali());
         materijalTableView.getItems().clear();
         for (Materijal m : report.getMaterijali()) {
             materijalTableView.getItems().add(m);
